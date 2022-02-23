@@ -3,6 +3,7 @@
  * Do not make changes to this file directly
  */
 
+import type { FieldShieldResolver, ObjectTypeShieldResolver } from "nexus-shield";
 import type { Context } from "./../server/context";
 
 declare global {
@@ -129,9 +130,19 @@ export interface NexusGenTypes {
 }
 
 declare global {
-  interface NexusGenPluginTypeConfig<TypeName extends string> {}
+  interface NexusGenPluginTypeConfig<TypeName extends string> {
+    /**
+     * Default authorization rule to execute on all fields of this object
+     */
+    shield?: ObjectTypeShieldResolver<TypeName>;
+  }
   interface NexusGenPluginInputTypeConfig<TypeName extends string> {}
-  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
+    /**
+     * Authorization rule to execute for this field
+     */
+    shield?: FieldShieldResolver<TypeName, FieldName>;
+  }
   interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {}
   interface NexusGenPluginSchemaConfig {}
   interface NexusGenPluginArgConfig {}

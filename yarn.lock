@@ -6661,6 +6661,13 @@ nexus-prisma@^0.35.0:
     ts-replace-all "^1.0.0"
     tslib "^2.3.1"
 
+nexus-shield@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/nexus-shield/-/nexus-shield-2.1.0.tgz#9842b181ed50dcc3700375229ac1cf3881e05770"
+  integrity sha512-jJewbf1XcCMfipnH0CcAmEPIwWtUwAVJ7G5e3Z89uMaOH4HXAvKOJdsFDPzAuPu7PWgRfhwStdXHb8oy7ZJlBg==
+  dependencies:
+    object-hash "^2.0.3"
+
 nexus@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/nexus/-/nexus-1.2.0.tgz#12c4611702184fac170c98c1a2c778a76a9e9827"
@@ -6967,7 +6974,7 @@ object-assign@^4.1.0, object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-object-hash@^2.2.0:
+object-hash@^2.0.3, object-hash@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-2.2.0.tgz#5ad518581eefc443bd763472b8ff2e9c2c0d54a5"
   integrity sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==
