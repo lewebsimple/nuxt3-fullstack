@@ -1,9 +1,14 @@
 {
+  "name": "@lewebsimple/nuxt3-fullstack",
+  "description": "Exploring Nuxt3 as a full stack solution",
+  "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
     "lint": "eslint --fix --ignore-path .gitignore .",
+    "release": "release-it",
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
@@ -14,7 +19,8 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "eslint": "^8.9.0",
-    "nuxt3": "latest"
+    "nuxt3": "latest",
+    "release-it": "^14.12.5"
   },
   "eslintConfig": {
     "extends": "@lewebsimple/eslint-config-vue"
