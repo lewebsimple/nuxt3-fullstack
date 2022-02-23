@@ -7,6 +7,8 @@ definePageMeta({
 <template>
   <div id="login-page" class="prose">
     <h1>Login page</h1>
-    <FormLogin />
+    <div class="not-prose">
+      <FormLogin />
+    </div>
   </div>
 </template>

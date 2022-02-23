@@ -19,5 +19,21 @@ export const useAuth = () => {
     auth.value = result;
   };
 
-  return { auth, isAuthenticated, hasUserRole, login, logout };
+  // FormKit schema for the login form
+  const loginFormSchema = [
+    {
+      $formkit: "text",
+      name: "email",
+      label: "Email",
+      validation: "required|email",
+    },
+    {
+      $formkit: "password",
+      name: "password",
+      label: "Password",
+      validation: "required",
+    },
+  ];
+
+  return { auth, isAuthenticated, hasUserRole, login, logout, loginFormSchema };
 };
