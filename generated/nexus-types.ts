@@ -3,6 +3,8 @@
  * Do not make changes to this file directly
  */
 
+import type { Context } from "./../server/context";
+
 declare global {
   interface NexusGen extends NexusGenTypes {}
 }
@@ -76,7 +78,7 @@ export type NexusGenFeaturesConfig = {
 };
 
 export interface NexusGenTypes {
-  context: any;
+  context: Context;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   inputTypeShapes: NexusGenInputs & NexusGenEnums & NexusGenScalars;

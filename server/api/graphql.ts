@@ -1,5 +1,7 @@
 import { defineHandle, useBody, useQuery } from "h3";
 import { getGraphQLParameters, processRequest, renderGraphiQL, sendResult, shouldRenderGraphiQL } from "graphql-helix";
+import type { Context } from "../context";
+import { contextFactory } from "../context";
 import schema from "../schema";
 
 export default defineHandle(async (req, res) => {
@@ -17,12 +19,13 @@ export default defineHandle(async (req, res) => {
 
   // Process GraphQL request and send result
   const { operationName, query, variables } = getGraphQLParameters(request);
-  const result = await processRequest({
+  const result = await processRequest<Context>({
     operationName,
     query,
     variables,
     request,
     schema,
+    contextFactory,
   });
   sendResult(result, res);
 });

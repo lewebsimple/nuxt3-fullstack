@@ -10,4 +10,8 @@ export default makeSchema({
     schema: resolve(process.cwd(), "generated/schema.graphql"),
     typegen: resolve(process.cwd(), "generated/nexus-types.ts"),
   },
+  contextType: {
+    module: resolve(process.cwd(), "server/context.ts"),
+    export: "Context",
+  },
 }) as unknown as GraphQLSchema;
