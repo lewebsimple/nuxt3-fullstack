@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 full stack application starter
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+This repository contains the example code for the [Exploring Nuxt3 as a full stack solution](https://dev.to/lewebsimple/nuxt3-graphql-4p5l) series.
 
 ## Setup
 
