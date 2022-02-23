@@ -16,6 +16,7 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "devDependencies": {
+    "@formkit/vue": "^1.0.0-beta.2",
     "@graphql-codegen/near-operation-file-preset": "^2.2.6",
     "@graphql-codegen/typescript": "^2.4.5",
     "@graphql-codegen/typescript-operations": "^2.3.2",

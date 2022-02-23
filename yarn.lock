@@ -529,6 +529,81 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@formkit/core@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/core/1.0.0-beta.2/3b8b068d074b19dfb4fd8f165e1df40de25b1c5ca28f1092840042f4c012d463#d3bd2d8be684c2f58f6503ac82f8e2c1a8c3c967"
+  integrity sha512-TO1/5q+nwEcMQYKxIEOAL7zekuShVRNTcuXSLwwGKJWy2VTJ0OWvb4fbYCmkNhKEkZz4VsfIDWRz24KAZyfhBw==
+  dependencies:
+    "@formkit/utils" "1.0.0-beta.2"
+
+"@formkit/dev@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/dev/1.0.0-beta.2/b425034e8baa5ed03d0345c87713c502e3de8f749e2816d8baa46dec650dd434#16ec58af1946d0c0c3f2487207d14730abe73b1f"
+  integrity sha512-okXMvgzd/qO1InzrrdihhPS82xXc8W+nSTjEUxPh849uUWClCi+Yo3Uh2v6sVUzxEFCj1u42OFRgLqHlhpAV3w==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/utils" "1.0.0-beta.2"
+
+"@formkit/i18n@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/i18n/1.0.0-beta.2/0ec0f38b159ac180129b879fcef57d728ad06b04505a0074c63b6597dfa3d2b8#cf8a5acf01e5f960e8cb2d6e3af7c3d3f6a0b5b1"
+  integrity sha512-DHQSpphWvs9d64mW0cuOC0ckEmCSliBJKx1iy5yT0wR7vUj9V8WIiqHIQeLsEQP53xshOlwIrZ/p22dxGF9teA==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/utils" "1.0.0-beta.2"
+    "@formkit/validation" "1.0.0-beta.2"
+
+"@formkit/inputs@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/inputs/1.0.0-beta.2/2dd35ac22c0d5f75bfc083efb14db809df203da710def77b02e1f629443abc62#5f27fc7306cd90aa3cd7c846cbe43e6a521e526b"
+  integrity sha512-DoOZ5mEp3hckJoy6nVKtanKtpQB5YIHgn9lgVPpvgbQ/jcXbIhfhMqjc0bqn3eK+YQENdsBARYZrE5tKIKVZwg==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+
+"@formkit/observer@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/observer/1.0.0-beta.2/127c2daffce8282e85d7684090a1f6f336144f5eb9d9106dde05a87f8f029694#f2be59fcdbe3b6095ac5da3e191631514a088c30"
+  integrity sha512-FVr3Ur705conlavAmGcSfFhCiS4rSxV9lS4PzbrdQ8WsvwJPjgYtXC64o5/Jh1RJ5GZI6mKkuXawW0TJnk8RPQ==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/utils" "1.0.0-beta.2"
+
+"@formkit/rules@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/rules/1.0.0-beta.2/4868d4a834bcefbded44f4c36b00bcab4bea6fa07acd34a4ee91f401212f36cd#4c6bbc0acf9914553a68ee8a6bd44323590ef914"
+  integrity sha512-cB1zBYSr+lf4q1CEpLKQpkaw8Io2LZowuX2HKQh4qkuSJP/CKgYs3COKtKTJlhEOpP+Yff9IKcYc1Hig13+Fgw==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/utils" "1.0.0-beta.2"
+    "@formkit/validation" "1.0.0-beta.2"
+
+"@formkit/utils@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/utils/1.0.0-beta.2/fda97d76bbd6324520e8f80884f1dc003fc33a27eccdfea6263933d7bf4127c9#c728e0f734085549eb100789ab045055fa890fd2"
+  integrity sha512-mh+7VYh5DQY4p4QSmJgTCMsRaysGHuJSQMYIntkMOYnJhv9mHAED6UPGpceQdREkf3IPAePrlWHDgAfPEL4dXA==
+
+"@formkit/validation@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/validation/1.0.0-beta.2/143d169907973aaedee59d11b567052281ffbee1530f5732e56daed26b5e5a46#811493ffa0a8ff760532fc5593e8d8a2b498338f"
+  integrity sha512-q3dCnDGBPElu2FoiWsYrVD4fEQ8zl1Vjc1h5GGz0pHgMv0kmriW/LRWcZreNNueibhptjwJ20k763rpRIlg2vw==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/observer" "1.0.0-beta.2"
+
+"@formkit/vue@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://npm.pkg.github.com/download/@formkit/vue/1.0.0-beta.2/d80a075e51b284cef4cceb1a26812b67d176a274dd210db67069ff1dd6fc5023#e7d99c9052b05d622ad17244192b3a089ac58dc6"
+  integrity sha512-dW3+eSpfGTLt1sr6MgovI25sD9NZQEXwl3EJPI5X1hYVF6Q9uUQKK/9hTRuFBh6x6UNLyYDGMub7ef7lvp6tpA==
+  dependencies:
+    "@formkit/core" "1.0.0-beta.2"
+    "@formkit/dev" "1.0.0-beta.2"
+    "@formkit/i18n" "1.0.0-beta.2"
+    "@formkit/inputs" "1.0.0-beta.2"
+    "@formkit/observer" "1.0.0-beta.2"
+    "@formkit/rules" "1.0.0-beta.2"
+    "@formkit/utils" "1.0.0-beta.2"
+    "@formkit/validation" "1.0.0-beta.2"
+
 "@graphql-codegen/add@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/add/-/add-3.1.1.tgz#e161ff1c7cdf74ce20b32f75f640f9592b9a18ca"
