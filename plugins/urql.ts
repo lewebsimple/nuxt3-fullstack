@@ -1,4 +1,5 @@
 import urql, { cacheExchange, dedupExchange, fetchExchange, ssrExchange } from "@urql/vue";
+import { devtoolsExchange } from "@urql/devtools";
 import { defineNuxtPlugin, useRuntimeConfig } from "#app";
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -25,6 +26,11 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Custom exchanges
   const exchanges = [dedupExchange, cacheExchange, ssr, fetchExchange];
+
+  // Devtools exchange
+  if (nuxtApp._legacyContext?.isDev) {
+    exchanges.unshift(devtoolsExchange);
+  }
 
   nuxtApp.vueApp.use(urql, {
     url: graphqlApiURL,
