@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     transpile: ["@urql/vue"],
   },
   buildModules: ["@nuxtjs/tailwindcss", "nuxt-graphql-codegen"],
+  publicRuntimeConfig: {
+    graphqlApiURL: process.env.GRAPHQL_API_URL || "http://localhost:3000/api/graphql",
+  },
   typescript: { strict: true },
 });
