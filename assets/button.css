@@ -1,0 +1,6 @@
+.btn {
+  @apply inline-flex px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-600 text-white font-bold cursor-pointer;
+}
+.btn:disabled {
+  @apply cursor-not-allowed;
+}
