@@ -1,4 +1,5 @@
 import { PrismaClient, UserRole } from "@prisma/client";
+import { encryptPassword } from "../utils/password";
 
 const prisma = new PrismaClient();
 
@@ -6,8 +7,7 @@ async function main() {
   // Default admin user
   const admin = {
     email: process.env.SEED_ADMIN_EMAIL || "admin@example.com",
-    // TODO: Encrypt the stored password
-    password: process.env.SEED_ADMIN_PASSWORD || "changeme",
+    password: encryptPassword(process.env.SEED_ADMIN_PASSWORD || "changeme"),
     role: UserRole.ADMIN,
   };
   const user = await prisma.user.upsert({
