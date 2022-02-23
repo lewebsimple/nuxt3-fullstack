@@ -24,5 +24,10 @@
   },
   "eslintConfig": {
     "extends": "@lewebsimple/eslint-config-vue"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
