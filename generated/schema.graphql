@@ -5,3 +5,16 @@
 type Query {
   hello: String!
 }
+
+type User {
+  email: String!
+  id: Int!
+  role: UserRole!
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  GUEST
+  UNVERIFIED
+}

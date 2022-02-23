@@ -11,7 +11,9 @@ declare global {
 
 export interface NexusGenInputs {}
 
-export interface NexusGenEnums {}
+export interface NexusGenEnums {
+  UserRole: "ADMIN" | "EDITOR" | "GUEST" | "UNVERIFIED";
+}
 
 export interface NexusGenScalars {
   String: string;
@@ -23,6 +25,12 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Query: {};
+  User: {
+    // root type
+    email: string; // String!
+    id: number; // Int!
+    role: NexusGenEnums["UserRole"]; // UserRole!
+  };
 }
 
 export interface NexusGenInterfaces {}
@@ -31,12 +39,18 @@ export interface NexusGenUnions {}
 
 export type NexusGenRootTypes = NexusGenObjects;
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars;
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums;
 
 export interface NexusGenFieldTypes {
   Query: {
     // field return type
     hello: string; // String!
+  };
+  User: {
+    // field return type
+    email: string; // String!
+    id: number; // Int!
+    role: NexusGenEnums["UserRole"]; // UserRole!
   };
 }
 
@@ -44,6 +58,12 @@ export interface NexusGenFieldTypeNames {
   Query: {
     // field return type name
     hello: "String";
+  };
+  User: {
+    // field return type name
+    email: "String";
+    id: "Int";
+    role: "UserRole";
   };
 }
 
@@ -57,7 +77,7 @@ export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = never;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 
