@@ -18,7 +18,7 @@ export type Scalars = {
 
 export type Query = {
   __typename?: "Query";
-  hello: Scalars["String"];
+  hello?: Maybe<Scalars["String"]>;
 };
 
 export type User = {
@@ -37,7 +37,7 @@ export enum UserRole {
 
 export type HelloQueryVariables = Types.Exact<{ [key: string]: never }>;
 
-export type HelloQuery = { __typename?: "Query"; hello: string };
+export type HelloQuery = { __typename?: "Query"; hello?: string | null };
 
 export const HelloDocument = {
   kind: "Document",
