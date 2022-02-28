@@ -3,81 +3,76 @@
  * Do not make changes to this file directly
  */
 
-
-import type { Context } from "./../server/context"
-import type { FieldShieldResolver, ObjectTypeShieldResolver } from "nexus-shield"
-
-
-
+import type { FieldShieldResolver, ObjectTypeShieldResolver } from "nexus-shield";
+import type { Context } from "./../server/context";
 
 declare global {
   interface NexusGen extends NexusGenTypes {}
 }
 
-export interface NexusGenInputs {
-}
+export interface NexusGenInputs {}
 
 export interface NexusGenEnums {
-  UserRole: "ADMIN" | "EDITOR" | "GUEST" | "UNVERIFIED"
+  UserRole: "ADMIN" | "EDITOR" | "GUEST" | "UNVERIFIED";
 }
 
 export interface NexusGenScalars {
-  String: string
-  Int: number
-  Float: number
-  Boolean: boolean
-  ID: string
+  String: string;
+  Int: number;
+  Float: number;
+  Boolean: boolean;
+  ID: string;
 }
 
 export interface NexusGenObjects {
   Query: {};
-  User: { // root type
+  User: {
+    // root type
     email: string; // String!
     id: number; // Int!
-    role: NexusGenEnums['UserRole']; // UserRole!
-  }
+    role: NexusGenEnums["UserRole"]; // UserRole!
+  };
 }
 
-export interface NexusGenInterfaces {
-}
+export interface NexusGenInterfaces {}
 
-export interface NexusGenUnions {
-}
+export interface NexusGenUnions {}
 
-export type NexusGenRootTypes = NexusGenObjects
+export type NexusGenRootTypes = NexusGenObjects;
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums;
 
 export interface NexusGenFieldTypes {
-  Query: { // field return type
+  Query: {
+    // field return type
     hello: string; // String!
-  }
-  User: { // field return type
+  };
+  User: {
+    // field return type
     email: string; // String!
     id: number; // Int!
-    role: NexusGenEnums['UserRole']; // UserRole!
-  }
+    role: NexusGenEnums["UserRole"]; // UserRole!
+  };
 }
 
 export interface NexusGenFieldTypeNames {
-  Query: { // field return type name
-    hello: 'String'
-  }
-  User: { // field return type name
-    email: 'String'
-    id: 'Int'
-    role: 'UserRole'
-  }
+  Query: {
+    // field return type name
+    hello: "String";
+  };
+  User: {
+    // field return type name
+    email: "String";
+    id: "Int";
+    role: "UserRole";
+  };
 }
 
-export interface NexusGenArgTypes {
-}
+export interface NexusGenArgTypes {}
 
-export interface NexusGenAbstractTypeMembers {
-}
+export interface NexusGenAbstractTypeMembers {}
 
-export interface NexusGenTypeInterfaces {
-}
+export interface NexusGenTypeInterfaces {}
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
@@ -97,11 +92,11 @@ export type NexusGenAbstractsUsingStrategyResolveType = never;
 
 export type NexusGenFeaturesConfig = {
   abstractTypeStrategies: {
-    isTypeOf: false
-    resolveType: true
-    __typename: false
-  }
-}
+    isTypeOf: false;
+    resolveType: true;
+    __typename: false;
+  };
+};
 
 export interface NexusGenTypes {
   context: Context;
@@ -119,36 +114,36 @@ export interface NexusGenTypes {
   interfaceNames: NexusGenInterfaceNames;
   scalarNames: NexusGenScalarNames;
   unionNames: NexusGenUnionNames;
-  allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
-  allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
-  abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
+  allInputTypes: NexusGenTypes["inputNames"] | NexusGenTypes["enumNames"] | NexusGenTypes["scalarNames"];
+  allOutputTypes:
+    | NexusGenTypes["objectNames"]
+    | NexusGenTypes["enumNames"]
+    | NexusGenTypes["unionNames"]
+    | NexusGenTypes["interfaceNames"]
+    | NexusGenTypes["scalarNames"];
+  allNamedTypes: NexusGenTypes["allInputTypes"] | NexusGenTypes["allOutputTypes"];
+  abstractTypes: NexusGenTypes["interfaceNames"] | NexusGenTypes["unionNames"];
   abstractTypeMembers: NexusGenAbstractTypeMembers;
   objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
   abstractsUsingStrategyResolveType: NexusGenAbstractsUsingStrategyResolveType;
   features: NexusGenFeaturesConfig;
 }
 
-
 declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
     /**
      * Default authorization rule to execute on all fields of this object
      */
-    shield?: ObjectTypeShieldResolver<TypeName>
+    shield?: ObjectTypeShieldResolver<TypeName>;
   }
-  interface NexusGenPluginInputTypeConfig<TypeName extends string> {
-  }
+  interface NexusGenPluginInputTypeConfig<TypeName extends string> {}
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
     /**
      * Authorization rule to execute for this field
      */
-    shield?: FieldShieldResolver<TypeName, FieldName>
+    shield?: FieldShieldResolver<TypeName, FieldName>;
   }
-  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
-  }
-  interface NexusGenPluginSchemaConfig {
-  }
-  interface NexusGenPluginArgConfig {
-  }
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginSchemaConfig {}
+  interface NexusGenPluginArgConfig {}
 }
