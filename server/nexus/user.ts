@@ -1,5 +1,5 @@
 import { enumType, objectType } from "nexus";
-import { User, UserRole } from "~/prisma/nexus";
+import { User, UserRole } from "../../prisma/nexus";
 
 export const UserRoleEnum = enumType(UserRole);
 

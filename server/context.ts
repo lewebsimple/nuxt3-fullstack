@@ -1,16 +1,14 @@
-import type { ExecutionContext } from "graphql-helix";
-import { parse } from "cookie-es";
-import { prisma } from "~/prisma/client";
-import type { AuthState } from "~/utils/jwt";
-import { decodeJwt, jwtCookieName } from "~/utils/jwt";
+import { prisma } from "../prisma/client";
+import type { AuthState } from "../utils/jwt";
+import { decodeJwt } from "../utils/jwt";
+import { pubsub } from "./pubsub";
 
 export type Context = {
   auth: AuthState;
   prisma: typeof prisma;
+  pubsub: typeof pubsub;
 };
 
-export const contextFactory = async ({ request }: ExecutionContext): Promise<Context> => {
-  const cookies: Record<string, string> = parse((request.headers as { cookie: string }).cookie || "");
-  const token = cookies[jwtCookieName] || "";
-  return { auth: decodeJwt(token), prisma };
+export const contextFactory = (token: string): Context => {
+  return { auth: decodeJwt(token), prisma, pubsub };
 };

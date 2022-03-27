@@ -1,6 +1,7 @@
 import type { ServerResponse } from "http";
 import type { User, UserRole } from "@prisma/client";
 import type { CookieSerializeOptions } from "cookie-es";
+import { parse } from "cookie-es";
 import { setCookie } from "h3";
 import type { SignOptions } from "jsonwebtoken";
 import jwt from "jsonwebtoken";
@@ -38,4 +39,10 @@ export const setAuthState = (user: User | null, res: ServerResponse): AuthState 
   const authState = validateAuthState({ user });
   setCookie(res, jwtCookieName, jwt.sign(authState, jwtSecretKey, jwtSignOptions), jwtCookieOptions);
   return authState;
+};
+
+// Extract JWT token from request.headers
+export const getTokenFromHeaders = (headers: { cookie?: string }): string => {
+  const cookies: Record<string, string> = parse(headers.cookie || "");
+  return cookies[jwtCookieName] || "";
 };

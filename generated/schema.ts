@@ -17,6 +17,11 @@ export type Query = {
   hello: Scalars["String"];
 };
 
+export type Subscription = {
+  __typename?: "Subscription";
+  ping?: Maybe<Scalars["String"]>;
+};
+
 export type User = {
   __typename?: "User";
   email: Scalars["String"];

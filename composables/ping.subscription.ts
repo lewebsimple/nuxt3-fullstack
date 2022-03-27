@@ -40,22 +40,28 @@ export enum UserRole {
   Unverified = "UNVERIFIED",
 }
 
-export type HelloQueryVariables = Types.Exact<{ [key: string]: never }>;
+export type PingSubscriptionVariables = Types.Exact<{ [key: string]: never }>;
 
-export type HelloQuery = { __typename?: "Query"; hello: string };
+export type PingSubscription = { __typename?: "Subscription"; ping?: string | null };
 
-export const HelloDocument = {
+export const PingDocument = {
   kind: "Document",
   definitions: [
     {
       kind: "OperationDefinition",
-      operation: "query",
-      name: { kind: "Name", value: "Hello" },
-      selectionSet: { kind: "SelectionSet", selections: [{ kind: "Field", name: { kind: "Name", value: "hello" } }] },
+      operation: "subscription",
+      name: { kind: "Name", value: "Ping" },
+      selectionSet: { kind: "SelectionSet", selections: [{ kind: "Field", name: { kind: "Name", value: "ping" } }] },
     },
   ],
 } as unknown as DocumentNode;
 
-export function useHelloQuery(options: Omit<Urql.UseQueryArgs<never, HelloQueryVariables>, "query"> = {}) {
-  return Urql.useQuery<HelloQuery>({ query: HelloDocument, ...options });
+export function usePingSubscription<R = PingSubscription>(
+  options: Omit<Urql.UseSubscriptionArgs<never, PingSubscriptionVariables>, "query"> = {},
+  handler?: Urql.SubscriptionHandlerArg<PingSubscription, R>,
+) {
+  return Urql.useSubscription<PingSubscription, R, PingSubscriptionVariables>(
+    { query: PingDocument, ...options },
+    handler,
+  );
 }

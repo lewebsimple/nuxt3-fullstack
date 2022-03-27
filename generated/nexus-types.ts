@@ -26,6 +26,7 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Query: {};
+  Subscription: {};
   User: {
     // root type
     email: string; // String!
@@ -47,6 +48,10 @@ export interface NexusGenFieldTypes {
     // field return type
     hello: string; // String!
   };
+  Subscription: {
+    // field return type
+    ping: string | null; // String
+  };
   User: {
     // field return type
     email: string; // String!
@@ -59,6 +64,10 @@ export interface NexusGenFieldTypeNames {
   Query: {
     // field return type name
     hello: "String";
+  };
+  Subscription: {
+    // field return type name
+    ping: "String";
   };
   User: {
     // field return type name

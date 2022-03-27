@@ -6,6 +6,10 @@ type Query {
   hello: String!
 }
 
+type Subscription {
+  ping: String
+}
+
 type User {
   email: String!
   id: Int!
