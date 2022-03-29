@@ -1,6 +1,13 @@
 import { UserRole } from "@prisma/client";
 import type { AuthState } from "~/utils/jwt";
 
+declare global {
+  interface LoginFormData {
+    email: string;
+    password: string;
+  }
+}
+
 export const useAuth = () => {
   // Current authentication state (initialized in plugins/auth.server.ts)
   const auth = useState<AuthState>("auth", () => ({ user: null }));
@@ -10,7 +17,7 @@ export const useAuth = () => {
   const hasUserRole = (role: UserRole) => ["ADMIN", role].includes(auth.value.user?.role || "");
 
   // Authentication helpers
-  const login = async (credentials: { email: string; password: string }) => {
+  const login = async (credentials: LoginFormData) => {
     const result = await $fetch("/api/login", { method: "POST", body: credentials });
     auth.value = result;
   };
