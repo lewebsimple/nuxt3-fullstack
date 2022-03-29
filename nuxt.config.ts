@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@urql/vue"],
   },
-  css: ["~/assets/main.css"],
+  css: ["~/assets/styles/main.css"],
   modules: ["~/modules/bootstrap", "@nuxtjs/tailwindcss", "@formkit/nuxt"],
   nitro: {
     preset: resolve(__dirname, "server/nitro-preset.ts"),
